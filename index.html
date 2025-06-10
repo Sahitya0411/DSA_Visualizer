@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Algorithm Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="controls">
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div id="heading">DSA Algorithm Visualizer</div>
+            <select id="visualizerSelect">
+                <option value="pathfinding">Pathfinding Visualizer</option>
+                <option value="sorting">Sorting Visualizer</option>
+            </select>
+            <!-- Pathfinding Controls -->
+            <select id="algorithmSelect">
+                <option value="dijkstra">Algorithms</option>
+                <option value="dijkstra">Dijkstra</option>
+                <option value="astar">A*</option>
+                <option value="bfs">BFS</option>
+                <option value="dfs">DFS</option>
+                <option value="greedy">Greedy Best-First</option>
+            </select>
+            <select id="mazeSelect">
+                <option value="none">Mazes & Patterns</option>
+                <option value="recursiveDivision">Recursive Division</option>
+                <option value="randomMaze">Basic Random Maze</option>
+                <option value="stairPattern">Simple Stair Pattern</option>
+            </select>
+            <!-- Sorting Controls -->
+            <select id="sortingAlgorithmSelect" style="display: none;">
+                <option value="bubble">Sorting Algorithms</option>
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+            </select>
+            <select id="arraySizeSelect" style="display: none;">
+                <option value="20">Array Size: 20</option>
+                <option value="50">Array Size: 50</option>
+                <option value="100">Array Size: 100</option>
+            </select>
+        </div>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <!-- Pathfinding Legend and Buttons -->
+            <div class="legend" id="pathfindingLegend">
+                <div id="startNodeLegend"><span style="background-color: #2980B9;"></span>Start Node</div>
+                <div id="targetNodeLegend"><span style="background-color: #9B59B6;"></span>Target Node</div>
+                <div><span style="background-color: #2C3E50;"></span>Wall Node</div>
+                <div><span style="background-color: #ECF0F1;"></span>Unvisited Node</div>
+                <div><span style="background-color: #00CED1;"></span><span style="background-color: #DA70D6;"></span>Visited Nodes</div>
+                <div><span style="background-color: #F1C40F;"></span>Shortest Path</div>
+            </div>
+            <!-- Sorting Legend -->
+            <div class="legend" id="sortingLegend" style="display: none;">
+                <div><span style="background-color: #00CED1;"></span>Comparing</div>
+                <div><span style="background-color: #DA70D6;"></span>Swapping/Placing</div>
+                <div><span style="background-color: #F1C40F;"></span>Sorted</div>
+            </div>
+            <button id="setStartBtn">Set Start</button>
+            <button id="setTargetBtn">Set Target</button>
+            <button id="setWallBtn">Set Walls</button>
+            <button id="visualizeBtn">Visualize!</button>
+            <button id="sortBtn" style="display: none;">Sort!</button>
+            <button id="stopBtn">Stop</button>
+            <button id="clearBtn">Clear Board</button>
+            <button id="clearWallsBtn">Clear Walls</button>
+            <button id="clearPathBtn">Clear Path</button>
+            <button id="resetArrayBtn" style="display: none;">Reset Array</button>
+            <select id="speedSelect">
+                <option value="veryFast">Speed: Very Fast</option>
+                <option value="fast">Speed: Fast</option>
+                <option value="normal">Speed: Normal</option>
+                <option value="slow">Speed: Slow</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div id="pathfinding-container" class="active">
+            <div id="sketch-holder"></div>
+        </div>
+        <div id="sorting-container">
+            <div id="sorting-sketch-holder"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
